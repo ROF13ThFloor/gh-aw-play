@@ -8,10 +8,9 @@ description: |
 
 engine: 
   id: copilot 
-  model: gpt-5-mini 
+  model: gpt-4o-mini  
 
 on:
-  schedule: every 1h
   workflow_dispatch:
 
 permissions:
