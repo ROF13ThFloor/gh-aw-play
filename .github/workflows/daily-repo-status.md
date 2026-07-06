@@ -8,7 +8,7 @@ description: |
 
 engine: 
   id: copilot 
-  model: gpt-4o-mini  
+  model: gpt-5-mini 
 
 on:
   schedule: every 1h
