@@ -5,6 +5,11 @@ description: |
   engaging GitHub issues with productivity insights, community highlights,
   and project recommendations.
 
+
+engine: 
+  id: copilot 
+  model: gpt-4o-mini  
+
 on:
   schedule: every 1h
   workflow_dispatch:
