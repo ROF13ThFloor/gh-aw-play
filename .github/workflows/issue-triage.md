@@ -18,7 +18,7 @@ network: defaults
 # # This workflow runs often, so you can use a small model to keep costs down.
 engine:
   id: copilot
-  model: small
+  model: gpt-5-mini
 
 safe-outputs:
   add-labels:
