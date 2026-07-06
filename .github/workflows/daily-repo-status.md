@@ -13,7 +13,7 @@ permissions:
   contents: read
   issues: read
   pull-requests: read
-
+  copilot-requests: write
 network: defaults
 
 tools:
