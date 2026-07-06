@@ -18,7 +18,9 @@ network: defaults
 # # This workflow runs often, so you can use a small model to keep costs down.
 engine:
   id: copilot
-  model: auto
+  args:
+    - --model
+    - auto
 
 safe-outputs:
   add-labels:
