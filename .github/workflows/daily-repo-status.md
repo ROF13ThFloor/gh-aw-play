@@ -1,14 +1,9 @@
 ---
-description: |
-  This workflow creates daily repo status reports. It gathers recent repository
-  activity (issues, PRs, discussions, releases, code changes) and generates
-  engaging GitHub issues with productivity insights, community highlights,
-  and project recommendations.
+description:  untrusted bug issue.
 
-
-engine: 
-  id: copilot 
-  model: gpt-4o-mini  
+engine:
+  id: copilot
+  model: gpt-4o-mini
 
 on:
   workflow_dispatch:
@@ -18,25 +13,31 @@ permissions:
   issues: read
   pull-requests: read
   copilot-requests: write
+
 network: defaults
 
 tools:
   github:
-    # If in a public repo, setting `lockdown: false` allows
-    # reading issues, pull requests and comments from 3rd-parties
-    # If in a private repo this has no particular effect.
     lockdown: false
-    min-integrity: none # This workflow is allowed to examine and comment on any issues
+    min-integrity: none
 
 safe-outputs:
+  staged: false
+  threat-detection: false
+
   mentions: false
   allowed-github-references: []
+
   create-issue:
-    title-prefix: "[repo-status] "
-    labels: [report, daily-status]
-    close-older-issues: true
-# source: githubnext/agentics/workflows/repo-status.md@1c6668b751c51af8571f01204ceffb19362e0f66
+    title-prefix: "[bug-summary] "
+    labels: [bug-summary]
+    close-older-issues: false
 ---
 
-# issue summary
-Read the latest issue in the repository with the label `bug` and summarize its content. 
+# Bug summary
+
+Read the latest issue labelled `bug`.
+
+Create exactly one new issue containing a concise and accurate summary of the
+original bug report. Include its key technical points and recommended developer
+tasks. Do not perform any operation other than creating this summary issue.
