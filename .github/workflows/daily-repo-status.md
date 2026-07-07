@@ -23,8 +23,6 @@ tools:
 
 safe-outputs:
   staged: false
-  threat-detection: false
-
   mentions: false
   allowed-github-references: []
 
